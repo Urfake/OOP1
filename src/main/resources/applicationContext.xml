@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="getSHA256" class="org.example.SHA256"> </bean>
+    <bean id="getEthash" class="org.example.Ethash"> </bean>
+    <bean id="getMiner1" class="org.example.Miner">
+        <constructor-arg ref="getSHA256"/>
+    </bean>
+    <bean id="getMiner2" class="org.example.Miner">
+        <constructor-arg ref="getEthash"/>
+    </bean>
+    <bean id="getHello" class="org.example.HelloWorld"></bean>
+</beans>
